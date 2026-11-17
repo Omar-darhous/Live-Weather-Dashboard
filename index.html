@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101827"><meta name="description" content="Your daily weather companion. Live conditions and a five-day forecast for cities around the world."><title>Atmos | Live Weather Dashboard</title><link rel="icon" href="favicon.svg"><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="app">
+
+<main>
+<div class="intro"><div><p class="eyebrow">A LITTLE CLARITY FOR YOUR DAY</p><h1>Every day starts with the sky.</h1><p class="subtitle">Your city. Your forecast. A world of possibilities.</p></div><div class="live-pill"><span></span> Live weather</div></div>
+<section class="search-section" aria-label="Find weather"><form id="search-form"><span class="search-icon" aria-hidden="true">&#9906;</span><input id="city-input" type="search" placeholder="Search for a city…" aria-label="City name" required minlength="2" maxlength="100" autocomplete="off"><button type="submit">Search <span aria-hidden="true">↗</span></button></form><button id="location-button" class="location-button">&#8982; <span>My location</span></button></section>
+<div class="quick-cities"><span>EXPLORE</span><button data-city="Cairo">Cairo</button><button data-city="London">London</button><button data-city="Tokyo">Tokyo</button><button data-city="New York">New York</button><div class="units" aria-label="Temperature units"><button data-unit="C" aria-pressed="true">&deg;C</button><button data-unit="F" aria-pressed="false">&deg;F</button></div></div>
+<div id="results" class="city-results" hidden aria-label="Matching cities"></div>
+<div id="status" role="status" aria-live="polite" hidden></div>
+<div id="error" role="alert" hidden><span id="error-text"></span><button id="retry">Try again ↻</button></div>
+<div id="dashboard" hidden>
+<div class="overview-grid"><section class="current-card"><div class="current-top"><div><p class="eyebrow">CURRENT WEATHER</p><h2 id="city-name"></h2><p id="local-date"></p></div><span class="today-pill">Today</span></div><div class="temperature-row"><div><div id="temperature" class="temperature"></div><p id="condition"></p></div><div id="main-icon" class="main-icon"></div></div><div class="current-bottom"><span id="feels-like"></span><span id="high-low"></span></div><div class="landscape" aria-hidden="true"><i></i><i></i><i></i></div></section>
+<section class="details"><div class="section-heading"><h2>Today's highlights</h2><span>The details that matter</span></div><div class="metrics" id="metrics"></div></section></div>
+<section class="forecast-section"><div class="section-heading"><div><p class="eyebrow">LOOKING AHEAD</p><h2>Your next 5 days</h2></div><span>One less thing to wonder about.</span></div><div id="forecast" class="forecast-grid"></div></section>
+<section class="day-note"><span class="note-icon">✧</span><div><h3>A fresh perspective, every day.</h3><p id="weather-note"></p></div><span class="note-decoration" aria-hidden="true">↗</span></section>
+</div>
+<div id="empty" class="empty"><span>☁</span><h2>Your forecast is on its way.</h2><p>Search a city to see what's happening in the sky.</p></div>
+</main><footer><span class="footer-brand">atmos.</span><span>Made for whatever the day brings.</span><span id="source">Live Weather Dashboard</span><button id="settings-button" class="provider-settings" type="button">Weather settings</button></footer>
+</div>
+<dialog id="settings"><form id="settings-form"><div class="section-heading"><h2>Weather settings</h2><button type="button" id="close-settings" aria-label="Close settings">✕</button></div><p>Use OpenWeatherMap for your assignment, or leave the key empty to use Open-Meteo.</p><label for="api-key">OpenWeatherMap API key</label><input id="api-key" type="password" autocomplete="off" placeholder="Paste your API key"><p class="small">The key stays in this browser session and is sent only to OpenWeatherMap. Client-side keys are visible in network requests.</p><button class="save-button" type="submit">Save & refresh</button></form></dialog>
+<script type="module" src="script.js"></script></body></html>
