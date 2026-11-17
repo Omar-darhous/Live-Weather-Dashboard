@@ -32,7 +32,7 @@ OpenWeatherMap daily highs/lows summarize available three-hour intervals; the la
 
 ## Deploy
 
-Deploy the root folder as a static site (Vercel: Other framework, no build command, output directory `.`). `server.js` is only a local development server. Geolocation requires HTTPS or localhost.
+Run `npm run build` to create the static `dist` folder. Vercel uses `vercel.json` (Other framework, build command `npm run build`, output directory `dist`). Only browser assets are copied; the local Node server is not deployed. `server.js` is only a local development server. Geolocation requires HTTPS or localhost.
 
 ## Files
 
